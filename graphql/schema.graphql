@@ -5,6 +5,6 @@ type person{
     gender:String!
 }
 type Query{
-    people:[person]!
+    yym:[person]!
     person(id:Int!):person
 }
