@@ -1,10 +1,13 @@
-import { yym, getById } from "./db";
+import { getmovies, getById ,addMovie,deleteMovie} from "./db";
 
 const resolvers = {
     Query: {
-        yym: () => yym,
-        person: (_, { id }) => getById(id)
+        movies: () => getmovies(),
+        movie: (_, { id }) => getById(id)
+    },
+    Mutation:{
+        addMovie: (_, { name, score }) => addMovie(name, score),
+        deleteMovie:(_,{id})=>deleteMovie(id)
     }
-}
-
+};
 export default resolvers;
